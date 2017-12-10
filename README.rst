@@ -16,9 +16,13 @@ To run it localy follow these steps:
 .. code:: shell
 
    # Clone the repository
-   git clone https://github.com/dasdachs/banda-ferdamana .
+   git clone https://github.com/dasdachs/bandaferdamana.git
+   
    # Install the dependencies using pipenv
-   pipenv install --three
+   # Make sure to have it installed
+   # https://docs.pipenv.org/
+   pipenv --three install
+   
    # Create the models in the local database
    # Defaults to a sqlite database
    python manage.py migrate 
@@ -27,3 +31,5 @@ To run it localy follow these steps:
    # Run the app
    python manage.py runserver
 
+.. _Wagtail: https://wagtail.io/
+.. _Django: https://www.djangoproject.com/ 
