@@ -1,0 +1,37 @@
+{% load static wagtailimages_tags menuitems %}
+<!DOCTYPE html>
+<html lang="si-sl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{{ page.title}}{%if page.title %} - {% endif %}Banda ferdamana</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="{% static 'frontend/css/style.css'%}" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Google fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+
+  </head>
+  <body>
+  {% block navbar %}
+    {% get_site_root as site_root %}
+    {% top_menu parent=site_root calling_page=self %}
+  {% endblock navbar %}
+
+  {% block content %}
+  {% endblock content %}
+  <footer class="conatiner">
+    <div class="credits"><p class="text-center">&copy; Banda Feerdamana {% now "Y" %}</p></div>
+  </footer>
+  <!-- scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="{% static 'frontend/js/main.js'%}"></script>
+  </body>
+</html>

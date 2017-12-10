@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% block content %}
+<main class="container">
+  {%if shows %}
+  <section class="container">
+    {% for show in shows %}
+    <article class="media">
+      <div class="media-left media-middle">
+          <img class="media-object" src="" alt="">
+      </div>
+      <div class="media-body">
+        <h2 class="media-heading"><a href="{% pageurl show %}">{{ show.title }}</a></h2>
+        <p class="small">{{ show.date | date:"D d E" }} @ <a href="show.location_url">{{ show.location }}</a></p>
+        <p>{{ show.body | richtext }}</p>
+        </ul>
+      </div>
+      <hr>
+    </article>
+    {% endfor %}
+  </section>
+  {% else %}
+  <br>
+  <article class="container">
+    <p class="text-center lead">Ni novih nastopov ... je to konec bande ... Ne ni. Vse bo okej. Malo smo na odmoru.</p>
+  </article>
+  {% endif %}
+</main>
+{% endblock content %}

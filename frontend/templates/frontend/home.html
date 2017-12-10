@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags wagtailcore_tags %}
+{% block content %}
+  <div class="container">
+    <div class="jumbotron"style="background-image: url('{% if not page.cover %}{% static "frontend/img/banda-cover-light.jpg" %}{% else %}/media/original_images/{{ page.cover.filename }}{% endif %}');background-size:cover;min-height:80vh">
+    </div>
+  </div>
+
+
+  <section class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <h3 class="text-center">Nastopi</h3>
+        {% if next_show %}
+          <h4 class="text-center"><a href="{% pageurl next_show %}"><strong>{{next_show.title}}</strong></a></h4>
+        <p>{{next_show.date | date:"D d E G" }} ob {{next_show.date | date:"H i"}}, v <strong><a href="{next_show.location_url">{{next_show.location}}</a></strong>
+            {% else %}
+          <p>Malo smo na oddihu. Se vidimo kmalu :)</p>
+        {% endif %}
+      </div>
+      <div class="col-md-8">
+        {% if exposed_pages %}
+          {% for page in exposed_pages %}
+          <h4 class="text-center">{{page.title}}</h4>
+          <p>{{page.summary}}</p>
+          {% endfor %}
+        {% else %}
+        <img src="https://www.taleas.com/images/memes/move-along-theres-nothing-to-see-here.png" alt="Nothing to see here" />
+        {% endif %}
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock content %}

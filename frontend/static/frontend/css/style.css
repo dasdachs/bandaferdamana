@@ -1,0 +1,58 @@
+/**
+ * Base html styling
+ */
+.navbar {
+  background-color: transparent;
+  border-radius: 0;
+  border-bottom: 0;
+  font-family: 'Fredericka the Great', cursive;;
+  height: 15vh;
+  padding-top:15px;
+}
+.navbar-fixed {
+  background-color: rgba(20,20,20,0.5);
+  height: 5vh;
+}
+.navbar-logo {
+  margin-top: -40px;
+  filter: invert(100%);
+}
+.navbar-logo-fixed {
+  margin-top:0;
+  max-height:90px;
+  margin-top:-50px;
+}
+.navbar-form-search .form-control {
+  width: 250px;
+}
+.navbar-form-search .btn {
+  border: 0;
+  background: transparent;
+  font-size: 18px;
+}
+.navbar-form-search .btn:active, .navbar-form-search .btn:hover, .navbar-form-search .btn:focus {
+  color: #000;
+  outline: none;
+  box-shadow: none;
+}
+.navbar-form-search .search-form-container {
+  text-align: right;
+  position: absolute;
+  width: 300px;
+  overflow: hidden;
+  background: #fff;
+  right: 60px;
+  top: 0;
+  z-index: 9;
+  transition: all .3s ease-in-out;
+}
+.navbar-form-search .search-form-container.hdn {
+  width: 0;
+}
+.navbar-form-search .search-form-container .search-input-group {
+  width: 300px;
+}
+.post-header {
+    padding-top:20vh;
+    color: #fff;
+}
