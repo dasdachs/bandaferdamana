@@ -52,7 +52,9 @@
 .navbar-form-search .search-form-container .search-input-group {
   width: 300px;
 }
-.post-header {
+.text-header {
+    color: #FFF;
+}
+.heading-header {
     padding-top:20vh;
-    color: #fff;
 }

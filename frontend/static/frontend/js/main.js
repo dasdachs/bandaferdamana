@@ -3,7 +3,7 @@
  * Fixed navbar when scrolling
  */
 
-function fixToTop() {
+/*function fixToTop() {
   var menu = $('.navbar');
   var logo = $('.navbar-logo');
   var list = $('.navbar-nav>li>a');
