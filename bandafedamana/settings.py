@@ -17,7 +17,6 @@ import MySQLdb
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = BASE_DIR
-ENV = os.environ.get("BANDA")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -28,7 +27,7 @@ SECRET_KEY = os.environ.get(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False if ENV else True
+DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = ["*"]
 
@@ -123,7 +122,7 @@ DB_SETTINGS = {
 }
 
 DATABASES = {
-    'default': DB_SETTINGS['production'] if ENV else DB_SETTINGS['development']
+    'default': DB_SETTINGS[os.environ.get("DB_SETTINGS")]
 }
 
 # Password validation
