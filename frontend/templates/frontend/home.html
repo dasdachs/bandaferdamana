@@ -2,11 +2,9 @@
 {% load static wagtailimages_tags wagtailcore_tags %}
 {% block content %}
   <div class="container">
-    <div class="jumbotron"style="background-image: url('{% if not page.cover %}{% static "frontend/img/banda-cover-light.jpg" %}{% else %}/media/original_images/{{ page.cover.filename }}{% endif %}');background-size:cover;min-height:80vh">
+    <div class="jumbotron"style="background-image: url('{% if page.main_cover == None %}{% static "frontend/img/banda-cover-light.jpg" %}{% else %}{{ page.main_cover.file.url }}{% endif %}');background-size:cover;min-height:80vh">
     </div>
   </div>
-
-
   <section class="container-fluid">
     <div class="row">
       <div class="col-md-4">

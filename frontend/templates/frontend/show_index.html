@@ -2,18 +2,24 @@
 {% load wagtailcore_tags %}
 {% block content %}
 <main class="container">
-  {%if shows %}
-  <section class="container">
-    {% for show in shows %}
-    <article class="media">
-      <div class="media-left media-middle">
-          <img class="media-object" src="" alt="">
-      </div>
-      <div class="media-body">
-        <h2 class="media-heading"><a href="{% pageurl show %}">{{ show.title }}</a></h2>
-        <p class="small">{{ show.date | date:"D d E" }} @ <a href="show.location_url">{{ show.location }}</a></p>
-        <p>{{ show.body | richtext }}</p>
-        </ul>
+  <section>
+    {%if shows %}
+      {% for show in shows %}
+      <article class="row show-item">
+        <div class="col-xs-4 show-date">
+          <time datetime="2018-01-11">
+            <span class="day">{{show.date | date:"d "}}</span>
+            <span class="month">{{show.date | date:"b "}}</span>
+            <span class="year">{{show.date | date:"Y"}}</span>
+          </time>
+        </div>
+        <div class="col-xs-6 show-info">
+          <h2 class="media-heading">{{show.title}}</h2>
+          <p class="small">{{show.body|richtext}}</p>
+        </div>
+        <div class="col-sm-2">
+          <p class="location"><a href="{{show.location_url}}">{{show.locationa}}</a></p>
+        </div>
       </div>
       <hr>
     </article>

@@ -58,3 +58,20 @@
 .heading-header {
     padding-top:20vh;
 }
+/*
+ * Events index
+ */
+.show-item{
+  widht:80%;
+}
+.show-date{
+  font-size:18px;
+}
+.show-date span {
+  display: block;
+  font-weight:bold;
+  text-align:center;
+}
+.month{
+  font-size:20px;
+}

@@ -5,10 +5,8 @@
   <article>
     <header style="width: 100%;min-height:60vh;background-image:url('{{ page.cover.file.url }}'); background-size: cover;">
       <h1 class="text-center text-header heading-header">{{page.title}}</h1>
-      <p class="text-center small text-header">{{page.owner.username}}, {% if page.modified %}{{ page.modified | date:'D d E' }}{% else %}{{page.created | date:'D d E'}}{% endif %}</p>
     </header>
     <div class="container">
-      <p>{{page.body|richtext}}</p>
     </div>
   </article>
 </main>

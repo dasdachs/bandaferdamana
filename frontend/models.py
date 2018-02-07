@@ -11,7 +11,7 @@ from taggit.managers import TaggableManager
 
 class Home(Page):
     """The main or home page"""
-    cover = models.ForeignKey(
+    main_cover = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
         blank=True,
@@ -20,12 +20,12 @@ class Home(Page):
     )
 
     content_panels = Page.content_panels + [
-        ImageChooserPanel('cover'),
+        ImageChooserPanel('main_cover'),
     ]
 
     promote_panels = [
         MultiFieldPanel(Page.promote_panels, "Common page configuration"),
-        ImageChooserPanel('cover'),
+        ImageChooserPanel('main_cover'),
     ]
 
     def get_context(self, request):
@@ -134,7 +134,7 @@ class Show(Page):
         FieldPanel('location_url'),
         FieldPanel('body', classname='full'),
     ]
-    
+
     promote_panels = [
         MultiFieldPanel(Page.promote_panels, "Common page configuration"),
     ]
