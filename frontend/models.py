@@ -1,16 +1,16 @@
 from django.db import models
 from django.utils import timezone
 
-from wagtail.wagtailcore.models import Page
-from wagtail.wagtailcore.fields import RichTextField
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel
-from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
+from wagtail.core.models import Page
+from wagtail.core.fields import RichTextField
+from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, InlinePanel
+from wagtail.images.edit_handlers import ImageChooserPanel
 
 from taggit.managers import TaggableManager
 
 
 class Home(Page):
-    """The main or home page"""
+    """The main or home page with the cover image"""
     main_cover = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
